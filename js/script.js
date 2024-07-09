@@ -64,9 +64,9 @@ const validateInput = function (input) {
         message.innerText = "Enter a letter.";
     } else if (input.length > 1) {
         //Input is more than 1 letter
-        message.innerText = "Enter a single."
+        message.innerText = "Enter a single letter."
     } else if (!input.match(acceptedLetter)) {
-        //Input is a non-letter
+        //Input is not a letter
         message.innerText = "Enter a letter from A to Z."
     } else {
         //Input is correct format
@@ -77,7 +77,7 @@ const validateInput = function (input) {
 const makeGuess = function (guess) {
     guess = guess.toUpperCase();
     if (guessedLetters.includes(guess)) {
-        message.innerText = "No repeats! You already guessed that!"
+        message.innerText = "No repeats! You already guessed that letter!"
     } else {
         guessedLetters.push(guess);
         console.log(guessedLetters);
@@ -108,7 +108,7 @@ const updateWordInProgress = function (guessedLetters) {
             revealWord.push("●");
         } 
     }
-    // console.log(revealWord);
+   
     wordInProgress.innerText = revealWord.join("");
     checkIfWin();
 };
